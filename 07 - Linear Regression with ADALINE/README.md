@@ -58,6 +58,8 @@ Atualizando os pesos usando o gradiente descendente.
 Abaixo segue uma imagem do gráfico gerado pelo código mostrando a linha de regressão linear obtida através do algoritmo Adaline:
 Regressão Linear com Adaline
 
+![alt text](https://github.com/marcus1298/MachineLearningBasics/blob/main/07%20-%20Linear%20Regression%20with%20ADALINE/7Resultado.jpg)
+
 Esse código é apenas um exemplo ilustrativo e pode ser modificado e aprimorado de acordo com suas necessidades. O algoritmo Adaline pode ser aplicado em diversos problemas de regressão linear e é uma boa opção quando se deseja trabalhar com grandes conjuntos de dados ou quando há necessidade de atualização contínua dos pesos.
 
 Espero que este código seja útil para você e qualquer dúvida ou sugestão, por favor não hesite em entrar em contato ou abrir uma issue no GitHub.
