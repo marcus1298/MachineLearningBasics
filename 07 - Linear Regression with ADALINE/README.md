@@ -29,18 +29,17 @@ Execute o código usando o seu interpretador Python
 
 5.Treinamento da ADALINE com a base de observações: um loop é executado por 1000 iterações, onde cada iteração realiza as seguintes etapas:
 
-Adicionando uma coluna de 1's para x, para representar o viés.
+ Adicionando uma coluna de 1's para x, para representar o viés.
 
-Fazendo a predição y_predict usando x_bias e os pesos atuais.
+ Fazendo a predição y_predict usando x_bias e os pesos atuais.
 
-Calculando o erro entre y_predict e y.
+ Calculando o erro entre y_predict e y.
 
-Calculando o custo como a soma do erro ao quadrado dividido por 2 * o número de amostras.
+ Calculando o custo como a soma do erro ao quadrado dividido por 2 * o número de amostras.
 
-Armazenando o custo.
+ Armazenando o custo.
 
 Atualizando os pesos usando o gradiente descendente.
-
 
 6. Tracando uma linha de regressão linear: com os pesos treinados, fazemos a previsão de y usando x_bias e os pesos atuais.
 
