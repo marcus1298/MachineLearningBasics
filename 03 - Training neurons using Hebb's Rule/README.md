@@ -1,5 +1,11 @@
-## Rede neural usando a regra de Hebb 
-Rrede neural usando a regra de Hebb para encontrar os pesos das conexões entre os neurônios e aplicá-lo a todas as 14 funções lógicas que podem ser encontradas usando a representação bipolar Ele segue os seguintes passos:
+## Treinando Rede Neural com Neurônios de McCulloch-Pitts usando a regra de Hebb 
+Rrede neural usando a regra de Hebb para encontrar os pesos das conexões entre os neurônios e aplicá-lo a todas as 14 funções lógicas que podem ser encontradas usando a representação bipolar.
+
+Considerando as 16 funções lógicas que podem ser construídas a partir de 2 variáveis, 14 delas podem ser encontradas usando a representação bipolar e a regra de Hebb. As duas funções lógicas que não podem ser encontradas são a função NAND e a função NOR. Isso ocorre porque essas funções lógicas não podem ser representadas usando somente conexões positivas (ou seja, sem conexões negativas).
+
+A representação bipolar é usada para representar as entradas e saídas de uma rede neural, onde 1 representa "verdadeiro" e -1 representa "falso". Isso permite a utilização de conexões negativas, o que é necessário para representar as funções lógicas NAND e NOR.
+
+Em resumo, a regra de Hebb pode ser usada para encontrar os pesos das redes neurais correspondentes a 14 das 16 funções lógicas que podem ser construídas a partir de 2 variáveis quando é usada a representação bipolar.
 
 ## Requisitos
 Python 3.x
@@ -31,3 +37,7 @@ Abaixo segue uma imagem do gráfico gerado pelos casos de teste do código:
 
 Esse código é apenas um exemplo ilustrativo e pode ser modificado e aprimorado de acordo com suas necessidades. 
 Espero que este código seja útil para você e qualquer dúvida ou sugestão, por favor não hesite em entrar em contato ou abrir uma issue no GitHub.
+
+## Conclusão
+
+Este código é uma ótima forma de entender como funcionam as redes neurais utilizando neurônios de McCulloch-Pitts e como a regra de Hebb pode ser utilizada para encontrar os pesos ideais para as conexões da rede. Além disso, é possível visualizar de forma clara e intuitiva os resultados obtidos pela rede.
