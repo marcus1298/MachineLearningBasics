@@ -11,7 +11,7 @@ Numpy
 
 ## Como funciona?
 
-ma Rede Neural Multicamada (MLP) é uma técnica de aprendizado supervisionado que pode ser utilizada para aproximar uma função a partir de dados amostrados. Ela é composta por várias camadas de neurônios interconectadas, onde cada camada é responsável por extrair características mais complexas a partir das características já extraídas na camada anterior.
+Uma Rede Neural Multicamada (MLP) é uma técnica de aprendizado supervisionado que pode ser utilizada para aproximar uma função a partir de dados amostrados. Ela é composta por várias camadas de neurônios interconectadas, onde cada camada é responsável por extrair características mais complexas a partir das características já extraídas na camada anterior.
 
 A aproximação de uma função utilizando MLP é realizada através do treinamento da rede. Primeiramente, é necessário fornecer uma base de dados amostrados da função desejada, onde cada amostra é composta por uma entrada (x) e uma saída (t) esperada. A rede é então treinada utilizando esses dados, ajustando os pesos das conexões entre neurônios de forma a minimizar o erro entre a saída gerada pela rede e a saída esperada.
 
