@@ -11,9 +11,15 @@ Numpy
 
 ## Como funciona?
 
-O perceptron é uma técnica de aprendizado supervisionado utilizada para classificação binária. Ele consiste em uma rede neural de uma camada, com um número finito de entradas, pesos e uma saída binária.
+ma Rede Neural Multicamada (MLP) é uma técnica de aprendizado supervisionado que pode ser utilizada para aproximar uma função a partir de dados amostrados. Ela é composta por várias camadas de neurônios interconectadas, onde cada camada é responsável por extrair características mais complexas a partir das características já extraídas na camada anterior.
 
-Neste exemplo, utilizamos uma base de dados com dois exemplos, um para cada letra (X e T). Os pesos iniciais são definidos aleatoriamente e, através de iterações de treinamento, os pesos são ajustados até que a saída desejada seja alcançada.
+A aproximação de uma função utilizando MLP é realizada através do treinamento da rede. Primeiramente, é necessário fornecer uma base de dados amostrados da função desejada, onde cada amostra é composta por uma entrada (x) e uma saída (t) esperada. A rede é então treinada utilizando esses dados, ajustando os pesos das conexões entre neurônios de forma a minimizar o erro entre a saída gerada pela rede e a saída esperada.
+
+Para esse processo, é utilizado o algoritmo de backpropagation, onde é calculado o erro gerado pela rede e este erro é propagado de volta através das camadas, ajustando os pesos das conexões para minimizar o erro. Esse processo é repetido várias vezes até que o erro seja minimizado o suficiente.
+
+Uma vez treinada, a rede é capaz de realizar a aproximação da função desejada para novos valores de entrada (x) que não fazem parte da base de dados de treinamento.
+
+Para implementar essa técnica em Python, é comum utilizar bibliotecas como o PyTorch, que possuem classes e funções prontas para a construção e treinamento de redes neurais, facilitando a implementação.
 
 
 ## Etapas
