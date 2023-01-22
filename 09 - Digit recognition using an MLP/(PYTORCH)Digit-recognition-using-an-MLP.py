@@ -31,6 +31,9 @@ model = MLP()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
+# Inicializando lista de perda
+loss_history = []
+
 # Treinar a rede
 def train(model, train_loader, criterion, optimizer, n_epochs=10):
     model.train()
@@ -39,6 +42,7 @@ def train(model, train_loader, criterion, optimizer, n_epochs=10):
             optimizer.zero_grad()
             outputs = model(images)
             loss = criterion(outputs, labels)
+            loss_history.append(loss.item())
             loss.backward()
             optimizer.step()
 
@@ -49,13 +53,40 @@ def test(model, test_loader):
     total = 0
     with torch.no_grad():
         for images, labels in test_loader:
-          outputs = model(images)
-          _, predicted = torch.max(outputs.data, 1)
-          total += labels.size(0)
-          correct += (predicted == labels).sum().item()
+            outputs = model(images)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
     accuracy = 100 * correct / total
     print(f"Accuracy: {accuracy:.2f}%")
     return accuracy
+
+# Plotando a evolução da perda durante o treinamento
+def plot_loss_history(loss_history):
+    plt.plot(loss_history)
+    plt.xlabel('Iteration')
+    plt.ylabel('Loss')
+    plt.title('Training loss history')
+    plt.show()
+
+# Plotando exemplos de dígitos classificados incorretamente
+def plot_misclassified(model, test_loader):
+    model.eval()
+    misclassified_idx = []
+    for images, labels in test_loader:
+        outputs = model(images)
+        _, predicted = torch.max(outputs.data, 1)
+        misclassified_idx += list(np.where(predicted != labels)[0])
+    if len(misclassified_idx) == 0:
+        print("Não há exemplos classificados incorretamente.")
+        return
+    plt.figure(figsize=(20, 4))
+    plt.subplots_adjust(wspace=0.5, hspace=0.5)
+    for i, idx in enumerate(misclassified_idx[:20]):
+        plt.subplot(2, 10, i + 1)
+        plt.imshow(x_test[idx].reshape(28, 28), cmap='gray')
+        plt.title("True: %s, Pred: %s" % (y_test[idx].item(), y_pred[idx].item()))
+    plt.show()
 
 # Treinar a rede
 train(model, train_loader, criterion, optimizer, n_epochs=10)
@@ -63,21 +94,8 @@ train(model, train_loader, criterion, optimizer, n_epochs=10)
 # Testar a rede
 accuracy = test(model, test_loader)
 
-#Plotando os digitos classificados corretamente
-x_test, y_test = next(iter(test_loader))
-y_pred = model(x_test).argmax(dim=1)
+# Plotando a evolução da perda durante o treinamento
+plot_loss_history(loss_history)
 
-fig, axs = plt.subplots(2, 5, figsize=(15, 6))
-axs = axs.ravel()
-for i in range(10):
-  # Selecionar apenas os dígitos classificados corretamente para aquela classe
-  correct_class_indices = np.where((y_test == i) & (y_pred == i))
-  x_class = x_test[correct_class_indices]
-# Plotar cada dígito na sua respectiva subfigura
-for j, img in enumerate(x_class[:5]):
-  axs[i].imshow(img.reshape(28,28), cmap='gray')
-  axs[i].axis('off')
-  axs[i].set_title(f"Classe: {i}")
-
-plt.suptitle("Digitos classificados corretamente - Acurácia: {:.2f}%".format(accuracy))
-plt.show()
+# Plotando exemplos de dígitos classificados incorretamente
+plot_misclassified(model, test_loader)
