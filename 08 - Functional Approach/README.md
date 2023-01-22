@@ -1,11 +1,12 @@
 ## MLP para aproximação de função
 Este repositório tem como objetivo aproximar uma função através da utilização de uma rede neural multicamada (MLP) utilizando o Pytorch.
 
-##
+## Requisitos
 
-Requisitos
 Pytorch
+
 Matplotlib
+
 Numpy
 
 ## Como funciona?
