@@ -10,6 +10,10 @@ Em resumo, a regra de Hebb pode ser usada para encontrar os pesos das redes neur
 ## Requisitos
 Python 3.x
 
+numpy
+
+seaborn
+
 ## Como usar
 
 Faça o download do código ou clone o repositório para o seu computador
